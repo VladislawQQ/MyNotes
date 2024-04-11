@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.homepage.FragmentHomePage">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/content_start"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/content_end"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/content_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/content_bot"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/content_center"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_notes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:text="@string/notes"
+        style="@style/TextViewNotesStyle"
+
+        app:layout_constraintTop_toTopOf="@id/content_top"
+        app:layout_constraintStart_toStartOf="@id/content_start"
+        />
+
+    <com.application.mynotes.ui.homepage.SearchView
+        android:id="@+id/search_view_search_notes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toTopOf="@id/content_top"
+        app:layout_constraintStart_toStartOf="@id/content_start"
+        app:layout_constraintEnd_toEndOf="@id/content_end"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_view_home_page"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_home_page"
+        android:visibility="gone"
+
+        app:layout_constraintTop_toTopOf="@id/content_center"
+        app:layout_constraintBottom_toBottomOf="@id/content_center"
+        app:layout_constraintStart_toStartOf="@id/content_start"
+        app:layout_constraintEnd_toEndOf="@id/content_end"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_create_first_note"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+
+        android:text="@string/create_your_first_note"
+        android:textSize="20sp"
+        android:textColor="@color/main_text_color"
+        android:gravity="center"
+
+        app:layout_constraintTop_toBottomOf="@id/image_view_home_page"
+        app:layout_constraintStart_toStartOf="@id/content_start"
+        app:layout_constraintEnd_toEndOf="@id/content_end"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_view_notes_not_found"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_search_not_found"
+        android:visibility="gone"
+
+        app:layout_constraintTop_toTopOf="@id/content_center"
+        app:layout_constraintBottom_toBottomOf="@id/content_center"
+        app:layout_constraintStart_toStartOf="@id/content_start"
+        app:layout_constraintEnd_toEndOf="@id/content_end"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_note_not_found"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+
+        android:text="@string/file_not_found_try_searching_again"
+        android:textSize="20sp"
+        android:textColor="@color/main_text_color"
+        android:gravity="center"
+
+        app:layout_constraintTop_toBottomOf="@id/image_view_notes_not_found"
+        app:layout_constraintStart_toStartOf="@id/content_start"
+        app:layout_constraintEnd_toEndOf="@id/content_end"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_notes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_marginTop="8dp"
+        tools:listitem="@layout/item_note"
+
+        app:layout_constraintTop_toBottomOf="@id/search_view_search_notes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/content_start"
+        app:layout_constraintEnd_toEndOf="@id/content_end"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_button_add_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:elevation="12dp"
+        android:backgroundTint="@color/main_background_color"
+        app:tint="@color/white"
+        android:src="@drawable/ic_add_plus"
+        app:shapeAppearance="@style/MyRoundFAB"
+
+        app:layout_constraintBottom_toBottomOf="@id/content_bot"
+        app:layout_constraintEnd_toEndOf="@id/content_end"
+        android:contentDescription="@string/add_note" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

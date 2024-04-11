@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyNotes" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="android:statusBarColor">@color/main_background_color</item>
+        <item name="android:navigationBarColor">@color/main_background_color</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <item name="android:textColorHint">@color/search_view_hint_color</item>
+        <item name="android:textColor">@color/search_view_hint_color</item>
+        <item name="android:editTextColor">@color/search_view_hint_color</item>
+    </style>
+
+    <style name="Theme.MyNotes" parent="Base.Theme.MyNotes" />
+</resources>

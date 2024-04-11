@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="title_hint_color">#9A9A9A</color>
+    <color name="main_text_color">#FFFFFF</color>
+    <color name="main_background_color">#252525</color>
+    <color name="item_note_background_color">#91F48F</color>
+    <color name="item_note_background_delete_color">#FF0000</color>
+    <color name="search_view_hint_color">#CCCCCC</color>
+</resources>
