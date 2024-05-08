@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_background_color"
+    android:background="@drawable/main_background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.homepage.FragmentHomePage">
+    tools:context="prom.application.mynotes.ui.homepage.FragmentHomePage">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/content_start"
@@ -27,14 +27,14 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.05" />
+        app:layout_constraintGuide_percent="0.07" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/content_bot"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.95" />
+        app:layout_constraintGuide_percent="0.9" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/content_center"
@@ -55,21 +55,23 @@
         app:layout_constraintStart_toStartOf="@id/content_start"
         />
 
-    <com.application.mynotes.ui.homepage.SearchView
+    <prom.application.mynotes.ui.homepage.searchview.SearchView
         android:id="@+id/search_view_search_notes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 
-        app:layout_constraintTop_toTopOf="@id/content_top"
+        app:layout_constraintTop_toTopOf="@id/text_view_notes"
+        app:layout_constraintBottom_toBottomOf="@id/text_view_notes"
         app:layout_constraintStart_toStartOf="@id/content_start"
-        app:layout_constraintEnd_toEndOf="@id/content_end"/>
+        app:layout_constraintEnd_toStartOf="@id/content_end"/>
+
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/image_view_home_page"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/img_home_page"
-        android:visibility="gone"
+        android:src="@drawable/sticky_pink"
+        android:visibility="visible"
 
         app:layout_constraintTop_toTopOf="@id/content_center"
         app:layout_constraintBottom_toBottomOf="@id/content_center"
@@ -81,29 +83,18 @@
         android:id="@+id/text_view_create_first_note"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:visibility="gone"
+        android:visibility="visible"
 
         android:text="@string/create_your_first_note"
-        android:textSize="20sp"
+        android:textSize="42sp"
         android:textColor="@color/main_text_color"
         android:gravity="center"
+        android:fontFamily="@font/orbitron_regular"
 
-        app:layout_constraintTop_toBottomOf="@id/image_view_home_page"
-        app:layout_constraintStart_toStartOf="@id/content_start"
-        app:layout_constraintEnd_toEndOf="@id/content_end"
-        />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/image_view_notes_not_found"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/img_search_not_found"
-        android:visibility="gone"
-
-        app:layout_constraintTop_toTopOf="@id/content_center"
-        app:layout_constraintBottom_toBottomOf="@id/content_center"
-        app:layout_constraintStart_toStartOf="@id/content_start"
-        app:layout_constraintEnd_toEndOf="@id/content_end"
+        app:layout_constraintTop_toTopOf="@id/image_view_home_page"
+        app:layout_constraintBottom_toBottomOf="@id/image_view_home_page"
+        app:layout_constraintStart_toStartOf="@id/image_view_home_page"
+        app:layout_constraintEnd_toEndOf="@id/image_view_home_page"
         />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -113,11 +104,13 @@
         android:visibility="gone"
 
         android:text="@string/file_not_found_try_searching_again"
-        android:textSize="20sp"
+        android:textSize="60sp"
         android:textColor="@color/main_text_color"
         android:gravity="center"
+        android:fontFamily="@font/orbitron_regular"
 
-        app:layout_constraintTop_toBottomOf="@id/image_view_notes_not_found"
+        app:layout_constraintTop_toBottomOf="@id/search_view_search_notes"
+        app:layout_constraintBottom_toBottomOf="@id/content_bot"
         app:layout_constraintStart_toStartOf="@id/content_start"
         app:layout_constraintEnd_toEndOf="@id/content_end"
         />
@@ -126,30 +119,33 @@
         android:id="@+id/recycler_view_notes"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="gone"
 
         android:layout_marginTop="8dp"
         tools:listitem="@layout/item_note"
 
         app:layout_constraintTop_toBottomOf="@id/search_view_search_notes"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/content_bot"
         app:layout_constraintStart_toStartOf="@id/content_start"
         app:layout_constraintEnd_toEndOf="@id/content_end"
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floating_button_add_note"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@null"
+        app:backgroundTint="@android:color/transparent"
+        android:elevation="0dp"
+        app:elevation="0dp"
 
-        android:elevation="12dp"
-        android:backgroundTint="@color/main_background_color"
-        app:tint="@color/white"
-        android:src="@drawable/ic_add_plus"
+        android:foreground="@drawable/ic_floating_btn"
         app:shapeAppearance="@style/MyRoundFAB"
 
+        android:contentDescription="@string/add_note"
         app:layout_constraintBottom_toBottomOf="@id/content_bot"
         app:layout_constraintEnd_toEndOf="@id/content_end"
-        android:contentDescription="@string/add_note" />
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

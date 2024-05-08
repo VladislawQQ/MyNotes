@@ -4,34 +4,26 @@
     android:layout_height="50dp"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.application.mynotes.ui.homepage.SearchView">
+    tools:context="prom.application.mynotes.ui.homepage.searchview.SearchView">
 
     <RelativeLayout
         android:id="@+id/search_closed_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:visibility="visible">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/open_search_button"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/btn_background"
-            android:drawableStart="@drawable/ic_search"
+            android:drawableStart="@drawable/ic_search_black"
             android:paddingStart="14dp"
             android:paddingEnd="14dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             />
-
-        <View
-            android:id="@+id/view_search_button"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/ic_search" />
 
     </RelativeLayout>
 
@@ -41,7 +33,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
 
-        android:visibility="invisible">
+        android:visibility="gone">
 
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/search_view_search_notes"
@@ -50,8 +42,10 @@
 
                 app:iconifiedByDefault="false"
                 style="@style/AppTheme.SearchView"
-                android:background="@drawable/bg_search_view"
+                android:background="@drawable/search_view_bg"
                 app:queryHint="Search by the keyword..."
+
+                app:closeIcon="@drawable/ic_close"
                 />
 
     </RelativeLayout>

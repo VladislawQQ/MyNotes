@@ -4,8 +4,11 @@
     <string name="title_hint">Title</string>
     <string name="type_something">Type something...</string>
     <string name="notes">Notes</string>
-    <string name="create_your_first_note">Create your first note!</string>
+    <string name="create_your_first_note">Create your first note</string>
     <string name="add_note">Add note</string>
     <string name="search_by_the_keyword">Search by the keyword...</string>
     <string name="file_not_found_try_searching_again">File not found. Try searching again.</string>
+    <string name="some_text_for_testing_my_notes_with_design">Some text for testing my notes with design</string>
+    <string name="message_delete">Note has been deleted</string>
+    <string name="snackbar_action">undo</string>
 </resources>

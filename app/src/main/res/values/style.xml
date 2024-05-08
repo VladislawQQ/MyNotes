@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="EditTextStyle" parent="NunitoSansFont">
+    <style name="EditTextStyle" parent="OrbitronFont">
 
         <item name="android:textColorHint">@color/title_hint_color</item>
         <item name="android:textColor">@color/main_text_color</item>
@@ -10,14 +10,14 @@
 
     </style>
 
-    <style name="TextViewStyle" parent="NunitoSansFont">
+    <style name="TextViewStyle" parent="OrbitronFont">
 
         <item name="android:textColor">@color/main_text_color</item>
         <item name="android:layout_marginTop">24dp</item>
 
     </style>
 
-    <style name="TextViewNotesStyle" parent="NunitoSansFont">
+    <style name="TextViewNotesStyle" parent="OrbitronFont">
 
         <item name="android:textColor">@color/main_text_color</item>
         <item name="android:text">@string/notes</item>
@@ -28,6 +28,13 @@
     <style name="NunitoSansFont">
 
         <item name="android:fontFamily">@font/nunito_sans_regular</item>
+        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+
+    </style>
+
+    <style name="OrbitronFont">
+
+        <item name="android:fontFamily">@font/orbitron_regular</item>
         <item name="android:textFontWeight" tools:targetApi="p">600</item>
 
     </style>
@@ -46,11 +53,13 @@
     <style name="AppTheme.SearchView" parent="Widget.AppCompat.SearchView">
         <item name="searchIcon">@null</item>
         <item name="closeIcon">@drawable/ic_close</item>
+        <item name="fontFamily">@font/orbitron_regular</item>
     </style>
 
     <style name="EditTextTheme" parent="Widget.Design.TextInputLayout">
         <item name="colorControlNormal">#400060AB</item>
         <item name="colorControlActivated">#0060AB</item>
     </style>
+
 
 </resources>

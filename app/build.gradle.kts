@@ -13,11 +13,11 @@ plugins {
 }
 
 android {
-    namespace = "com.application.mynotes"
+    namespace = "prom.application.mynotes"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.application.mynotes"
+        applicationId = "prom.application.mynotes"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

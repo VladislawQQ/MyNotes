@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragmentHomePage"
-        android:name="com.application.mynotes.ui.homepage.FragmentHomePage"
+        android:name="prom.application.mynotes.ui.homepage.FragmentHomePage"
         android:label="fragment_home_page"
         tools:layout="@layout/fragment_home_page" >
         <action
@@ -15,13 +15,13 @@
             app:destination="@id/fragmentEditor" />
         <argument
             android:name="notes"
-            app:argType="com.application.mynotes.model.NotesModel"
+            app:argType="prom.application.mynotes.model.NotesModel"
             app:nullable="true"
             android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/fragmentEditor"
-        android:name="com.application.mynotes.ui.editor.FragmentEditor"
+        android:name="prom.application.mynotes.ui.editor.FragmentEditor"
         android:label="fragment_editor"
         tools:layout="@layout/fragment_editor" >
         <action
@@ -29,7 +29,7 @@
             app:destination="@id/fragmentHomePage" />
         <argument
             android:name="notes"
-            app:argType="com.application.mynotes.model.NotesModel"
+            app:argType="prom.application.mynotes.model.NotesModel"
             app:nullable="true"
             android:defaultValue="@null" />
     </fragment>
